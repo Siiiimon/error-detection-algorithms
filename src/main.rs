@@ -22,20 +22,8 @@ fn main() {
         msg
     };
 
-    println!(
-        "parity for even message: {}",
-        calculate_parity_bit(even_message),
-    );
-    println!(
-        "parity for odd message: {}",
-        calculate_parity_bit(odd_message),
-    );
-    println!(
-        "parity for errored even message: {}",
-        calculate_parity_bit(errored_even_message),
-    );
-    println!(
-        "parity for errored odd message: {}",
-        calculate_parity_bit(errored_odd_message),
-    );
+    assert!(!calculate_parity_bit(even_message));
+    assert!(calculate_parity_bit(odd_message));
+    assert!(calculate_parity_bit(errored_even_message));
+    assert!(!calculate_parity_bit(errored_odd_message));
 }
